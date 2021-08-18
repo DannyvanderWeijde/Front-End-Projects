@@ -1,40 +1,60 @@
 @-webkit-keyframes top{
 	0%{
-		top: 0%;
+		top: 0vh;
 	}
 
+    99%{
+        display: none;
+    }
+
 	100%{
-		top: -60%;
+		top: -100vh;
+        display: none;
 	}
 }
 
 @keyframes top{
 	0%{
-		top: 0%;
+		top: 0vh;
 	}
 
+    99%{
+        display: none;
+    }
+
 	100%{
-		top: -60%;
+		top: -100vh;
+        display: none;
 	}
 }
 
 @-webkit-keyframes bot{
 	0%{
-		bottom: 0%;
+		bottom: 0vh;
 	}
 
+    99%{
+        display: none;
+    }
+
 	100%{
-		bottom: -60%;
+		bottom: -100vh;
+        display: none;
 	}
 }
 
 @keyframes bot{
 	0%{
-		bottom: 0%;
+		bottom: 0vh;
 	}
 
+    99%{
+        display: none;
+    }
+
 	100%{
-		bottom: -60%;
+		bottom: -100vh;
+        display: none;
 	}
 }
 
@@ -73,13 +93,13 @@
 }
 
 .top {
-    top: 0%;
-    -webkit-animation: top 3s forwards;
-    animation: top 3s forwards;
+    top: 0vh;
+    -webkit-animation: top 6s forwards;
+    animation: top 6s forwards;
 }
 
 .bot {
-    bottom: 0%;
-    -webkit-animation: bot 3s forwards;
-    animation: bot 3s forwards;
+    bottom: 0vh;
+    -webkit-animation: bot 6s forwards;
+    animation: bot 6s forwards;
 }
