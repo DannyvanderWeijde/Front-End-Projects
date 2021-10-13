@@ -70,6 +70,15 @@ h6 {
     font-size: 4em;
 }
 
+p {
+    letter-spacing: 0.05em;
+}
+
+::selection {
+    color: color(dark);
+    background: color(light);
+}
+
 .loading {
     display: none;
     width: 100%;
@@ -377,5 +386,157 @@ h6 {
     &__text {
         width: 100%;
         text-align: center;
+    }
+}
+
+.services {
+    width: 100%;
+
+    &__container {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    &__title {
+        text-transform: uppercase;
+        margin: 0px 0px 100px 0px;
+
+        &--accent {
+            color: color(primary);
+            font-family: 'Teko', sans-serif;
+            letter-spacing: 0.1em;
+        }
+    }
+
+    &__item {
+        flex-basis: 30%;
+    }
+
+    &-item {
+        &__icon {
+            color: color(primary);
+            font-size: 3em;
+            margin: 0px 10px 0px 0px;
+        }
+    
+        &__title {
+            display: inline-block;
+            font-size: 3em;
+            text-transform: uppercase;
+        }
+    }
+
+    &__line {
+        width: 2px;
+        background-color: color(accent);
+    }
+}
+
+.slideshow {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+
+    &__inner {
+        display: flex;
+        height: inherit;
+        padding: 20px 0px;
+        justify-content: space-between;
+        align-items: center;
+        transition: 0.5s linear transform;
+    }
+
+    &__img {
+        width: auto;
+        height: 80%;
+        margin: 0px 50px;
+        box-shadow: 0px 0px 20px 3px rgba(115, 115, 115, 0.76%);
+
+        &--zoom-out {
+            height: 100%;
+        }
+    }
+}
+
+.contact {
+    display: flex;
+    width: 100%;
+    padding: 50px 100px;
+    border-left: 1px solid color(accent);
+    border-right: 1px solid color(accent);
+    border-bottom: 1px solid color(accent);
+
+    &__container--half {
+        flex-basis: 50%;
+        text-align: left;
+        padding: 20px;
+    }
+
+    &__title {
+        text-transform: uppercase;
+
+        &--accent {
+            color: color(primary);
+            font-family: 'Teko', sans-serif;
+            letter-spacing: 0.1em;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        margin: 0px 0px 30px 0px;
+    }
+
+    &-item {
+        &__container {
+            display: inline-block;
+            margin: 0px 0px 0px 15px;
+        }
+
+        &__sub-text {
+            display: block;
+            margin: 0px 0px 10px 0px;
+        }
+
+        &__link {
+            color: color(light);
+            font-style: italic;
+            transition: 0.5s linear color;
+
+            &:hover {
+                color: color(accent);
+            }
+        }
+    }
+
+    &__link {
+        display: flex;
+        width: 50px;
+        height: 50px;
+        border: 1.5px solid color(primary);
+        border-radius: 1.5em;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: color(primary);
+        transition: 0.5s linear;
+
+        &:hover {
+            color: color(accent);
+            border: 1.5px solid color(accent);
+        }
+    }
+
+    &__icon {
+        font-size: 1.5em;
     }
 }
