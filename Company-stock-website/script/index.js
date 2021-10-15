@@ -24,6 +24,12 @@ window.onscroll = function()
 
     // Run custom scrollbar.
     customScrollBar();
+
+    // Check if function exits.
+    if (typeof scrollAnimation === "function") {
+        // Run function that animates elements on scroll.
+        scrollAnimation(elements);
+    }
 }
 
 /**
@@ -76,6 +82,15 @@ function completed()
     // Check if function slideshow can be performed if so run it.
     if (typeof transform !== 'undefined') {
         slideshow();
+    }
+
+    // Check if function exits.
+    if (typeof scrollAnimation === "function") {
+        // Run function that animates elements on scroll.
+        scrollAnimation(elements);
+
+        // Run function that adds class so the animations look better.
+        addPreAnimationClasses(elements);
     }
 }
 

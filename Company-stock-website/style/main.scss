@@ -24,12 +24,45 @@ $tablet: 768px;
     }
 }
 
-@keyframes loading {
+@keyframes container {
     0% {
-      transform: rotate(0deg);
+        transform: translateY(100px);
+        opacity: 0;
     }
     100% {
-      transform: rotate(360deg);
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes gallery__content--left {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes gallery__content--right {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideshow {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
 
@@ -370,6 +403,10 @@ p {
     width: 100%;
     overflow: auto;
 
+    &--hidden {
+        overflow: hidden;
+    }
+
     &__content {
         width: 100%;
         max-width: 1240px;
@@ -377,6 +414,14 @@ p {
         margin: 0 auto;
         padding: 200px 0px;
         text-align: center;
+
+        &--animation {
+            animation: 3s forwards container;
+        }
+
+        &--hidden {
+            opacity: 0;
+        }
     }
 
     &__title {
@@ -450,6 +495,10 @@ p {
     box-shadow: 0px 0px 20px 3px rgba(115, 115, 115, 0.76%);
     margin: 20px 0px;
 
+    &--hidden {
+        overflow: hidden;
+    }
+
     &__item {
         display: flex;
         position: relative;
@@ -465,6 +514,30 @@ p {
         max-width: 80%;
         flex-wrap: wrap;
         justify-content: center;
+
+        &--animation-left {
+            &-no-delay {
+                animation: 3s forwards gallery__content--left;
+            }
+
+            &-2-delay {
+                animation: 3s 1s forwards gallery__content--left;
+            }
+        }
+
+        &--animation-right {
+            &-1-delay {
+                animation: 3s 0.5s forwards gallery__content--right;
+            }
+
+            &-3-delay {
+                animation: 3s 1.5s forwards gallery__content--right;
+            }
+        }
+
+        &--hidden {
+            opacity: 0;
+        }
     }
 
     &__img {
@@ -550,6 +623,14 @@ p {
     width: 100%;
     height: 600px;
     overflow: hidden;
+
+    &--animation {
+        animation: 3s forwards slideshow;
+    }
+
+    &--hidden {
+        opacity: 0;
+    }
 
     &__inner {
         display: flex;
