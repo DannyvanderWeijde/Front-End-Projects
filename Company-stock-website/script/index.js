@@ -185,7 +185,7 @@ document.onreadystatechange = function()
         // Run loading screen animation.
         loadingAnimation();
 
-        // Check if function headerTitleAnimation can be performed if so run it.
+        // Check if function headerTitleAnimation exists if so run it.
         if (typeof header__title_main !== 'undefined') {
             headerTitleAnimation();
         }
