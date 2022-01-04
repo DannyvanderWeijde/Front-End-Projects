@@ -15,30 +15,77 @@ var elements = Array(
         document.getElementsByClassName("container__content")[0],
         "container__content--animation"
     ),
+    
     Array(
         document.getElementsByClassName("gallery")[0],
         "gallery__content--animation-left-no-delay",
         document.getElementsByClassName("gallery__content")[0],
     ),
+    
     Array(
         document.getElementsByClassName("gallery")[0],
         "gallery__content--animation-right-3-delay",
         document.getElementsByClassName("gallery__content")[1],
     ),
+    
     Array(
         document.getElementsByClassName("gallery")[0],
         "gallery__content--animation-left-2-delay",
         document.getElementsByClassName("gallery__content")[2],
     ),
+    
     Array(
         document.getElementsByClassName("gallery")[0],
         "gallery__content--animation-right-1-delay",
         document.getElementsByClassName("gallery__content")[3],
     ),
+
     Array(
         document.getElementsByClassName("slideshow")[0],
         "slideshow--animation",
         "",
+        2,
+    ),
+
+    Array(
+        document.getElementsByClassName("services")[0],
+        "services__item--animation-left-no-delay",
+        document.getElementsByClassName("services__item")[0],
+        2,
+    ),
+
+    Array(
+        document.getElementsByClassName("services")[0],
+        "services__item--animation-2-delay",
+        document.getElementsByClassName("services__item")[1],
+        2,
+    ),
+
+    Array(
+        document.getElementsByClassName("services")[0],
+        "services__item--animation-right-1-delay",
+        document.getElementsByClassName("services__item")[2],
+        2,
+    ),
+
+    Array(
+        document.getElementsByClassName("services")[0],
+        "services__title--animation",
+        document.getElementsByClassName("services__title")[0],
+        2,
+    ),
+
+    Array(
+        document.getElementsByClassName("services")[0],
+        "services__line--animation",
+        document.getElementsByClassName("services__line")[0],
+        2,
+    ),
+
+    Array(
+        document.getElementsByClassName("services")[0],
+        "services__line--animation",
+        document.getElementsByClassName("services__line")[1],
         2,
     ),
 ) 
@@ -171,4 +218,10 @@ function addPreAnimationClasses(elements)
     elements[3][2].classList.add("gallery__content--hidden");
     elements[4][2].classList.add("gallery__content--hidden");
     elements[5][0].classList.add("slideshow--hidden");
+    elements[6][2].classList.add("services__item--hidden");
+    elements[7][2].classList.add("services__item--hidden");
+    elements[8][2].classList.add("services__item--hidden");
+    elements[9][2].classList.add("services__title--hidden");
+    elements[10][2].classList.add("services__line--hidden");
+    elements[11][2].classList.add("services__line--hidden");
 }
