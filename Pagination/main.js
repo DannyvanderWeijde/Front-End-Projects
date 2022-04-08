@@ -28,6 +28,7 @@ const pagination = document.getElementById("pagination")
 
 let currentPage = 1
 let rows = 5
+let btns = new Array()
 
 function displayList (items, container, pagesPerRow, page) {
     container.innerHTML = ""
@@ -47,19 +48,25 @@ function displayList (items, container, pagesPerRow, page) {
     })
 }
 
-function setupPagination (items, container, pagesPerRow) {
+function setupPagination (items, listElm, container, pagesPerRow) {
     let pageCount = Math.ceil(items.length / pagesPerRow)  
     container.innerHTML = ""
+    makeArrowButton("first", container, items, listElm, rows)
+    makeArrowButton("previous", container, items, listElm, rows)
 
     for (let i = 1; i < pageCount + 1; i++) {
         let button = makeButton(i, items)
         container.appendChild(button)
     }
+
+    makeArrowButton("next", container, items, listElm, rows)
+    makeArrowButton("last", container, items, listElm, rows)
 }
 
 function makeButton (page, items) {
     let button = document.createElement("button")
     button.innerText = page
+    btns.push(button)
 
     if (currentPage === page) button.classList.add("active")
 
@@ -76,5 +83,77 @@ function makeButton (page, items) {
     return button
 }
 
+function arrowBtnFunction(type, button, currentActiveBtn) {
+    let btnSettings = new Array()
+
+    switch (type) {
+        case "first": 
+            btnSettings["currentPage"] = 1
+            btnSettings["condition"] = true
+            btnSettings["siblingBtn"] = btns[0]
+            break
+
+        case "previous": 
+            btnSettings["currentPage"] = currentPage - 1
+            btnSettings["condition"] = currentPage > 1
+            btnSettings["siblingBtn"] = currentActiveBtn.previousSibling
+            break
+
+        case "next": 
+            btnSettings["currentPage"] = currentPage + 1
+            btnSettings["condition"] = currentPage < rows
+            btnSettings["siblingBtn"] = currentActiveBtn.nextElementSibling
+            break
+
+        case "last": 
+            btnSettings["currentPage"] = rows
+            btnSettings["condition"] = true
+            btnSettings["siblingBtn"] = btns[btns.length - 1]
+            break
+    }
+
+    return btnSettings
+}
+
+function setArrowBtnContent(type, button) {
+    switch (type) {
+        case "first": 
+            button.innerText = "Start"
+            break
+
+        case "previous": 
+            button.innerText = "<"
+            break
+
+        case "next": 
+            button.innerText = ">"
+            break
+
+        case "last": 
+            button.innerText = "End"
+            break
+    }
+}
+
+function makeArrowButton(type, container, items, listElm, rows) {
+    let button = document.createElement("button")
+    setArrowBtnContent(type, button)
+
+    button.addEventListener("click", function () {
+        let currentActiveBtn = document.querySelector(".pageNumbers button.active")
+        let btnSettings = arrowBtnFunction(type, button, currentActiveBtn)
+        if (btnSettings["condition"]) {
+            currentPage = btnSettings["currentPage"]
+
+            displayList(items, listElm, rows, currentPage)
+    
+            currentActiveBtn.classList.remove("active")
+            btnSettings["siblingBtn"].classList.add("active")
+        }
+    })
+
+    container.appendChild(button)
+}
+
 displayList(listItems, listElm, rows, currentPage)
-setupPagination(listItems, pagination, rows) 
+setupPagination(listItems, listElm, pagination, rows) 
