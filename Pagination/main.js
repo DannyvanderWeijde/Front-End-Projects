@@ -83,7 +83,7 @@ function makeButton (page, items) {
     return button
 }
 
-function arrowBtnFunction(type, button, currentActiveBtn) {
+function arrowBtnFunction(type, currentActiveBtn) {
     let btnSettings = new Array()
 
     switch (type) {
@@ -141,7 +141,7 @@ function makeArrowButton(type, container, items, listElm, rows) {
 
     button.addEventListener("click", function () {
         let currentActiveBtn = document.querySelector(".pageNumbers button.active")
-        let btnSettings = arrowBtnFunction(type, button, currentActiveBtn)
+        let btnSettings = arrowBtnFunction(type, currentActiveBtn)
         if (btnSettings["condition"]) {
             currentPage = btnSettings["currentPage"]
 
