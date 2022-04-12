@@ -26,9 +26,10 @@ const listItems = new Array(
 const listElm = document.getElementById("list")
 const pagination = document.getElementById("pagination")
 
-let currentPage = 1
+let currentPage = 3
 let rows = 5
 let btns = new Array()
+let maxBtnAmount = 3
 
 function displayList (items, container, pagesPerRow, page) {
     container.innerHTML = ""
@@ -49,21 +50,39 @@ function displayList (items, container, pagesPerRow, page) {
 }
 
 function setupPagination (items, listElm, container, pagesPerRow) {
-    let pageCount = Math.ceil(items.length / pagesPerRow)  
+    let pageCount = Math.ceil(items.length / pagesPerRow)
+    let limBtns = pageCount > maxBtnAmount
+    btns = new Array()
     container.innerHTML = ""
-    makeArrowButton("first", container, items, listElm, rows)
-    makeArrowButton("previous", container, items, listElm, rows)
 
-    for (let i = 1; i < pageCount + 1; i++) {
-        let button = makeButton(i, items)
+    makeArrowButtons("start", container, items, listElm, rows)
+
+    if (limBtns) {
+        let btnPerSide = Math.ceil((maxBtnAmount - 1) / 2)
+
+        for (let i = 1; i <= btnPerSide; i++) {
+            let button = makeButton(currentPage - i, items, listElm, container, pagesPerRow, true)
+            container.appendChild(button)
+        }
+
+        let button = makeButton(currentPage, items, listElm, container, pagesPerRow, true)
         container.appendChild(button)
+
+        for (let i = 1; i <= btnPerSide; i++) {
+            let button = makeButton(currentPage + i, items, listElm, container, pagesPerRow, true)
+            container.appendChild(button)
+        }
+    } else {
+        for (let i = 1; i < pageCount + 1; i++) {
+            let button = makeButton(i, items)
+            container.appendChild(button)
+        }
     }
 
-    makeArrowButton("next", container, items, listElm, rows)
-    makeArrowButton("last", container, items, listElm, rows)
+    makeArrowButtons("end", container, items, listElm, rows)
 }
 
-function makeButton (page, items) {
+function makeButton (page, items, listElm, container, pagesPerRow, limit) {
     let button = document.createElement("button")
     button.innerText = page
     btns.push(button)
@@ -72,12 +91,17 @@ function makeButton (page, items) {
 
     button.addEventListener("click", function () {
         currentPage = page
+        if (limit) {
+            setupPagination(items, listElm, container, pagesPerRow)
+        }
         displayList(items, listElm, rows, currentPage)
 
-        let currentActiveBtn = document.querySelector(".pageNumbers button.active")
-        currentActiveBtn.classList.remove("active")
-    
-        button.classList.add("active")
+        if (!limit) {
+            let currentActiveBtn = document.querySelector(".pageNumbers button.active")
+            currentActiveBtn.classList.remove("active")
+        
+            button.classList.add("active")
+        }
     })
 
     return button
@@ -153,6 +177,16 @@ function makeArrowButton(type, container, items, listElm, rows) {
     })
 
     container.appendChild(button)
+}
+
+function makeArrowButtons(type, container, items, listElm, rows) {
+    if (type === "start") {
+        makeArrowButton("first", container, items, listElm, rows)
+        makeArrowButton("previous", container, items, listElm, rows)
+    } else {
+        makeArrowButton("next", container, items, listElm, rows)
+        makeArrowButton("last", container, items, listElm, rows)
+    }
 }
 
 displayList(listItems, listElm, rows, currentPage)
