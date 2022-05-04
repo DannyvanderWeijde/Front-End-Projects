@@ -31,6 +31,18 @@ body {
     background-color: $c-secondary;
 }
 
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: $c-secondary;
+    z-index: 10;
+}
+
+.main {
+    margin: 84px 0 0;
+}
+
 .logo {
     width: 100%;
     height: 100%;
@@ -38,7 +50,8 @@ body {
     &__container {
         margin: 0 auto;
         padding: 1.5rem .5rem;
-        width: $desktop;
+        max-width: $desktop;
+        width: 100%;
     }
 
     &__link {
@@ -49,59 +62,128 @@ body {
 }
 
 .intro {
-    display: grid;
-    width: $desktop;
-    height: 680px;
-    margin: 0 auto;
-    grid-template-columns: .2fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1.2fr 2fr 1fr 1fr 1fr;
+    max-width: $desktop;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    margin: 0 0 20%;
+
+    @include desktop() {
+        display: grid;
+        height: 680px;
+        grid-template-columns: .2fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1.2fr 2fr 1fr 1fr 1fr;
+        margin: 0 auto;
+    }
 
     &__image {
-        height: 100%;
-        grid-area: 1 / 1 / 9 / 3;
+        display: block;
+        width: 80vw;
+        margin: 0 auto;
+        
+        @include desktop() {
+            width: auto;
+            height: 100%;
+            grid-area: 1 / 1 / 9 / 3;
+        }
     }
 
     &__title {
+        display: inline-block;
         color: $c-primary;
+        position: relative;
         font-family: $ff-primary;
-        font-size: 16rem;
-        grid-area: 2 / 1 / 6 / 6;
-        text-align: right;
+        font-size: 4rem;
+        text-align: center;
+        line-height: 5rem;
+
+        &:after {
+            content: "";
+            display: block;
+            width: 90px;
+            height: 90px;
+            position: absolute;
+            top: 0%;
+            right: -10%;
+            background-image: url("https://assets.zyrosite.com/adelinaposca/illustrator-A85llvKEW3i1n9kZ.svg");
+            background-size: 90px;
+            background-repeat: no-repeat;
+        }
+
+        @include desktop() {
+            font-size: 16rem;
+            grid-area: 2 / 1 / 6 / 6;
+            text-align: right;
+            line-height: initial;
+
+            &:after {
+                display: none;
+            }
+        }
 
         &-sub {
-            font-size: 11.225rem;
+            font-size: 4.5rem;
             font-family: $ff-tertiary;
             font-weight: 400;
             color: $c-accent;
-            grid-area: 5 / 4 / 7 / 6;
+            text-align: center;
+            line-height: 5rem;
+            z-index: 2;
+
+            @include desktop() {
+                font-size: 11.225rem;
+                grid-area: 5 / 4 / 7 / 6;
+                line-height: initial;
+            }
         }
     }
 
     &__label {
-        height: 75px;
-        grid-area: 4 / 1 / 5 / 3;
-        align-self: end;
+        display: none;
+        z-index: 2;
+
+        @include desktop() {
+            display: block;
+            height: 75px;
+            grid-area: 4 / 1 / 5 / 3;
+            align-self: end;
+        }
     }
 
     &__text {
-        width: 80%;
+        width: 90%;
         position: relative;
         font-family: $ff-secondary;
         color: $c-primary;
         line-height: 1.5rem;
         grid-area: 8 / 4 / 9 / 6;
+        text-align: center;
+        margin: 3rem auto 0;
+
+        @include desktop() {
+            width: 80%;
+            text-align: initial;
+            margin: initial;
+        }
 
         &:after {
             content: "";
             display: block;
-            width: 45px;
-            height: 45px;
+            width: 60px;
+            height: 60px;
             position: absolute;
-            bottom: 0.5rem;
-            right: -5rem;
+            bottom: calc(-3rem - 60px);
+            right: 50%;
+            transform: translate(50%, 0);
             background-image: url("https://assets.zyrosite.com/adelinaposca/star-YNqoo45262c07xWO.svg");
-            background-size: 45px;
+            background-size: 60px;
             background-repeat: no-repeat;
+        
+            @include desktop() {
+                bottom: 10%;
+                right: -17%;
+                transform: initial;
+            }
         }
     }
 }
