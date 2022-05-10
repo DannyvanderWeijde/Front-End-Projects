@@ -9,6 +9,10 @@ body {
   background-color: #141518;
 }
 
+.highlight {
+  color: #9a64ce;
+}
+
 .header {
   width: 100%;
   position: fixed;
@@ -203,6 +207,136 @@ body {
     right: -17%;
     -webkit-transform: initial;
             transform: initial;
+  }
+}
+
+.social {
+  background-color: #fff;
+  margin: 10rem 0 5rem 0;
+}
+
+.social__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 1.725rem 0;
+}
+
+@media (min-width: 768px) {
+  .social__container {
+    -webkit-box-align: initial;
+        -ms-flex-align: initial;
+            align-items: initial;
+    -webkit-box-orient: initial;
+    -webkit-box-direction: initial;
+        -ms-flex-direction: initial;
+            flex-direction: initial;
+    padding: 1.725rem .5rem;
+  }
+}
+
+.social__text {
+  text-transform: uppercase;
+  font-family: "Work Sans", sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .social__text {
+    text-align: initial;
+  }
+}
+
+.social__icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1.725rem;
+  margin: 2rem 0;
+}
+
+@media (min-width: 768px) {
+  .social__icons {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    margin: 0 0 0 1.725rem;
+  }
+}
+
+.social__link {
+  color: #141518;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+.social__link:hover {
+  color: #424650;
+}
+
+.gallery {
+  margin: 2.5rem 0;
+}
+
+.gallery__container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.gallery__title {
+  color: #fff;
+  font-family: "MuseoModerno", display;
+  text-transform: uppercase;
+  font-size: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .gallery__title {
+    font-size: 4.5rem;
+  }
+}
+
+.gallery__title:after {
+  content: "";
+  display: block;
+  width: 130px;
+  height: 62px;
+  margin: 0 auto;
+  background-image: url("https://assets.zyrosite.com/adelinaposca/wow-AVLBBqgLerc4oP1J.svg");
+  background-size: 130px;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+  .gallery__title:after {
+    position: absolute;
+    bottom: -19%;
+    right: 7%;
+    margin: initial;
   }
 }
 /*# sourceMappingURL=main.css.map */

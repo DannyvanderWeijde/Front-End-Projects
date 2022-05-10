@@ -31,6 +31,10 @@ body {
     background-color: $c-secondary;
 }
 
+.highlight {
+    color: $c-accent;
+}
+
 .header {
     width: 100%;
     position: fixed;
@@ -183,6 +187,103 @@ body {
                 bottom: 10%;
                 right: -17%;
                 transform: initial;
+            }
+        }
+    }
+}
+
+.social {
+    background-color: $c-primary;
+    margin: 10rem 0 5rem 0;
+
+    &__container {
+        display: flex;
+        justify-content: center;   
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 100%;
+        max-width: $desktop;
+        margin: 0 auto;
+        padding: 1.725rem 0;
+
+        @include tablet() {
+            align-items: initial;
+            flex-direction: initial;
+            padding: 1.725rem .5rem;
+        }
+    }
+
+    &__text {
+        text-transform: uppercase;
+        font-family: $ff-secondary;
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-align: center;
+
+        @include tablet() {
+            text-align: initial;
+        }
+    }
+
+    &__icons {
+        display: flex;
+        justify-content: center;
+        gap: 1.725rem;
+        margin: 2rem 0;
+
+        @include tablet() {
+            display: inline-flex;
+            margin: 0 0 0 1.725rem;
+        }
+    }
+
+    &__link {
+        color: $c-secondary;
+        transition: .5s ease-in-out;
+
+        &:hover {
+            color: lighten($c-secondary, 20%);
+        }
+    }
+}
+
+.gallery {
+    margin: 2.5rem 0;
+
+    &__container {
+        width: 100%;
+        max-width: $desktop;
+        margin: 0 auto;
+    }
+
+    &__title {
+        color: $c-primary;
+        font-family: $ff-primary;
+        text-transform: uppercase;
+        font-size: 2rem;
+        text-align: center;
+        position: relative;
+
+        @include tablet() {
+            font-size: 4.5rem;
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            width: 130px;
+            height: 62px;
+            margin: 0 auto;
+            background-image: url("https://assets.zyrosite.com/adelinaposca/wow-AVLBBqgLerc4oP1J.svg");
+            background-size: 130px;
+            background-repeat: no-repeat;
+
+            @include tablet() {
+                position: absolute;
+                bottom: -19%;
+                right: 7%;
+                margin: initial;
             }
         }
     }
