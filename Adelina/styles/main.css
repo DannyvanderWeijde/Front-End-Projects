@@ -89,7 +89,7 @@ body {
   font-family: "MuseoModerno", display;
   font-size: 4rem;
   text-align: center;
-  line-height: 5rem;
+  line-height: 1.225;
 }
 
 .intro__title:after {
@@ -127,7 +127,7 @@ body {
   font-weight: 400;
   color: #9a64ce;
   text-align: center;
-  line-height: 5rem;
+  line-height: 1.225;
   z-index: 2;
 }
 
@@ -168,7 +168,7 @@ body {
   position: relative;
   font-family: "Work Sans", sans-serif;
   color: #fff;
-  line-height: 1.5rem;
+  line-height: 1.5;
   -ms-grid-row: 8;
   -ms-grid-row-span: 1;
   -ms-grid-column: 4;
@@ -296,7 +296,7 @@ body {
 }
 
 .gallery {
-  margin: 2.5rem 0;
+  margin: 10rem 0 2.5rem 0;
 }
 
 .gallery__container {
@@ -338,5 +338,74 @@ body {
     right: 7%;
     margin: initial;
   }
+}
+
+.gallery__grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+  -ms-grid-rows: .1fr 1fr 1fr .1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: .1fr 1fr 1fr .1fr 1fr 1fr 1fr 1fr;
+  margin: 6rem 0;
+}
+
+.gallery__image {
+  width: 100%;
+  height: auto;
+}
+
+.gallery__image-container:first-of-type {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
+  grid-area: 1 / 1 / 4 / 8;
+  position: relative;
+}
+
+.gallery__image-container:first-of-type:after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 5%;
+  right: 0%;
+  -webkit-transform: translate(50%, 0);
+          transform: translate(50%, 0);
+  background-image: url("https://assets.zyrosite.com/adelinaposca/star-YNqoo45262c07xWO.svg");
+  background-size: 80px;
+  background-repeat: no-repeat;
+}
+
+.gallery__image-container:nth-of-type(2) {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 9;
+  -ms-grid-column-span: 4;
+  grid-area: 2 / 9 / 4 / 13;
+}
+
+.gallery__image-container:nth-of-type(3) {
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 7;
+  -ms-grid-column-span: 6;
+  grid-area: 5 / 7 / 8 / 13;
+}
+
+.gallery__image-title {
+  color: #fff;
+  font-family: "MuseoModerno", display;
+  text-transform: uppercase;
+  font-size: 2rem;
+  line-height: 1.5;
+  margin: .725rem 0 0;
+}
+
+.gallery__image-subtitle {
+  color: #fff;
+  font-family: "Work Sans", sans-serif;
 }
 /*# sourceMappingURL=main.css.map */
