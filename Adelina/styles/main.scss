@@ -291,7 +291,7 @@ body {
     &__grid {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: .1fr 1fr 1fr .1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: .1fr 1fr 1fr .1fr 1fr 1fr .3fr 1fr 1.5fr 1fr .125fr .1fr;
         margin: 6rem 0;
     }
 
@@ -299,10 +299,16 @@ body {
         width: 100%;
         height: auto;
 
+        &--star {
+            width: 60px;
+            grid-area: 12 / 1 / 12 / 8;
+        }
+
         &-container {
+            position: relative;
+
             &:first-of-type {
                 grid-area: 1 / 1 / 4 / 8;
-                position: relative;
     
                 &:after {
                     content: "";
@@ -325,6 +331,97 @@ body {
 
             &:nth-of-type(3) {
                 grid-area: 5 / 7 / 8 / 13;
+
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 80px;
+                    height: 80px;
+                    position: absolute;
+                    top: 0;
+                    right: 12%;
+                    transform: translate(0, -50%);
+                    background-image: url("https://assets.zyrosite.com/adelinaposca/star-YNqoo45262c07xWO.svg");
+                    background-size: 80px;
+                    background-repeat: no-repeat;
+                }
+            }
+
+            &:nth-of-type(4) {
+                grid-area: 6 / 1 / 8 / 6;
+
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 80px;
+                    height: 80px;
+                    position: absolute;
+                    top: 5%;
+                    right: 0%;
+                    transform: translate(50%, 0);
+                    background-image: url("https://assets.zyrosite.com/adelinaposca/star-YNqoo45262c07xWO.svg");
+                    background-size: 80px;
+                    background-repeat: no-repeat;
+                }
+            }
+
+            &:nth-of-type(5) {
+                grid-area: 8 / 7 / 10 / 13;
+
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 35px;
+                    height: 35px;
+                    position: absolute;
+                    top: 0%;
+                    right: 4%;
+                    transform: translate(0, -50%);
+                    background-image: url("https://assets.zyrosite.com/adelinaposca/star-YNqoo45262c07xWO.svg");
+                    background-size: 35px;
+                    background-repeat: no-repeat;
+                }
+
+                .gallery__image-title,
+                .gallery__image-subtitle {
+                    padding: 0 0 0 8rem
+                }
+            }
+
+            &:nth-of-type(6) {
+                grid-area: 9 / 1 / 11 / 8;
+
+                &:before {
+                    content: "";
+                    display: block;
+                    width: 80px;
+                    height: 80px;
+                    position: absolute;
+                    top: 0%;
+                    right: 8.7%;
+                    transform: translate(0, -50%);
+                    background-image: url("https://assets.zyrosite.com/adelinaposca/star-YNqoo45262c07xWO.svg");
+                    background-size: 80px;
+                    background-repeat: no-repeat;
+                }
+
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 180px;
+                    height: 105px;
+                    position: absolute;
+                    bottom: 31%;
+                    right: 0%;
+                    transform: translate(50%, 0);
+                    background-image: url("https://assets.zyrosite.com/adelinaposca/tellme-A85ljkXpjZcWB9LJ.svg");
+                    background-size: 180px;
+                    background-repeat: no-repeat;
+                }
+            }
+
+            &:nth-of-type(7) {
+                grid-area: 10 / 9 / 12 / 13;
             }
         }
 

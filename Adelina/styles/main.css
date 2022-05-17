@@ -345,8 +345,8 @@ body {
   display: grid;
   -ms-grid-columns: (1fr)[12];
       grid-template-columns: repeat(12, 1fr);
-  -ms-grid-rows: .1fr 1fr 1fr .1fr 1fr 1fr 1fr 1fr;
-      grid-template-rows: .1fr 1fr 1fr .1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: .1fr 1fr 1fr .1fr 1fr 1fr .3fr 1fr 1.5fr 1fr .125fr .1fr;
+      grid-template-rows: .1fr 1fr 1fr .1fr 1fr 1fr .3fr 1fr 1.5fr 1fr .125fr .1fr;
   margin: 6rem 0;
 }
 
@@ -355,13 +355,24 @@ body {
   height: auto;
 }
 
+.gallery__image--star {
+  width: 60px;
+  -ms-grid-row: 12;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
+  grid-area: 12 / 1 / 12 / 8;
+}
+
+.gallery__image-container {
+  position: relative;
+}
+
 .gallery__image-container:first-of-type {
   -ms-grid-row: 1;
   -ms-grid-row-span: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 7;
   grid-area: 1 / 1 / 4 / 8;
-  position: relative;
 }
 
 .gallery__image-container:first-of-type:after {
@@ -393,6 +404,118 @@ body {
   -ms-grid-column: 7;
   -ms-grid-column-span: 6;
   grid-area: 5 / 7 / 8 / 13;
+}
+
+.gallery__image-container:nth-of-type(3):after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 0;
+  right: 12%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  background-image: url("https://assets.zyrosite.com/adelinaposca/star-YNqoo45262c07xWO.svg");
+  background-size: 80px;
+  background-repeat: no-repeat;
+}
+
+.gallery__image-container:nth-of-type(4) {
+  -ms-grid-row: 6;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-area: 6 / 1 / 8 / 6;
+}
+
+.gallery__image-container:nth-of-type(4):after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 5%;
+  right: 0%;
+  -webkit-transform: translate(50%, 0);
+          transform: translate(50%, 0);
+  background-image: url("https://assets.zyrosite.com/adelinaposca/star-YNqoo45262c07xWO.svg");
+  background-size: 80px;
+  background-repeat: no-repeat;
+}
+
+.gallery__image-container:nth-of-type(5) {
+  -ms-grid-row: 8;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 7;
+  -ms-grid-column-span: 6;
+  grid-area: 8 / 7 / 10 / 13;
+}
+
+.gallery__image-container:nth-of-type(5):after {
+  content: "";
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 0%;
+  right: 4%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  background-image: url("https://assets.zyrosite.com/adelinaposca/star-YNqoo45262c07xWO.svg");
+  background-size: 35px;
+  background-repeat: no-repeat;
+}
+
+.gallery__image-container:nth-of-type(5) .gallery__image-title,
+.gallery__image-container:nth-of-type(5) .gallery__image-subtitle {
+  padding: 0 0 0 8rem;
+}
+
+.gallery__image-container:nth-of-type(6) {
+  -ms-grid-row: 9;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
+  grid-area: 9 / 1 / 11 / 8;
+}
+
+.gallery__image-container:nth-of-type(6):before {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 0%;
+  right: 8.7%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  background-image: url("https://assets.zyrosite.com/adelinaposca/star-YNqoo45262c07xWO.svg");
+  background-size: 80px;
+  background-repeat: no-repeat;
+}
+
+.gallery__image-container:nth-of-type(6):after {
+  content: "";
+  display: block;
+  width: 180px;
+  height: 105px;
+  position: absolute;
+  bottom: 31%;
+  right: 0%;
+  -webkit-transform: translate(50%, 0);
+          transform: translate(50%, 0);
+  background-image: url("https://assets.zyrosite.com/adelinaposca/tellme-A85ljkXpjZcWB9LJ.svg");
+  background-size: 180px;
+  background-repeat: no-repeat;
+}
+
+.gallery__image-container:nth-of-type(7) {
+  -ms-grid-row: 10;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 9;
+  -ms-grid-column-span: 4;
+  grid-area: 10 / 9 / 12 / 13;
 }
 
 .gallery__image-title {
