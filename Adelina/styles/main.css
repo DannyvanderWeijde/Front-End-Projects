@@ -1,3 +1,21 @@
+.gallery__image-container:first-of-type:after, .gallery__image-container:nth-of-type(3):after, .gallery__image-container:nth-of-type(4):after, .gallery__image-container:nth-of-type(5):after, .gallery__image-container:nth-of-type(6):before, .intro__text:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-image: url("https://assets.zyrosite.com/adelinaposca/star-YNqoo45262c07xWO.svg");
+  background-repeat: no-repeat;
+}
+
+.gallery__image-container:first-of-type:after, .gallery__image-container:nth-of-type(3):after, .gallery__image-container:nth-of-type(4):after, .gallery__image-container:nth-of-type(5):after, .gallery__image-container:nth-of-type(6):before {
+  display: none;
+}
+
+@media (min-width: 1240px) {
+  .gallery__image-container:first-of-type:after, .gallery__image-container:nth-of-type(3):after, .gallery__image-container:nth-of-type(4):after, .gallery__image-container:nth-of-type(5):after, .gallery__image-container:nth-of-type(6):before {
+    display: block;
+  }
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -11,6 +29,10 @@ body {
 
 .highlight {
   color: #9a64ce;
+}
+
+.highlight-black {
+  color: #141518;
 }
 
 .header {
@@ -187,18 +209,13 @@ body {
 }
 
 .intro__text:after {
-  content: "";
-  display: block;
   width: 60px;
   height: 60px;
-  position: absolute;
   bottom: calc(-3rem - 60px);
   right: 50%;
   -webkit-transform: translate(50%, 0);
           transform: translate(50%, 0);
-  background-image: url("https://assets.zyrosite.com/adelinaposca/star-YNqoo45262c07xWO.svg");
   background-size: 60px;
-  background-repeat: no-repeat;
 }
 
 @media (min-width: 1240px) {
@@ -296,7 +313,13 @@ body {
 }
 
 .gallery {
-  margin: 10rem 0 2.5rem 0;
+  margin: 2.5rem 0;
+}
+
+@media (min-width: 1240px) {
+  .gallery {
+    margin: 10rem 0 2.5rem 0;
+  }
 }
 
 .gallery__container {
@@ -312,6 +335,7 @@ body {
   font-size: 2rem;
   text-align: center;
   position: relative;
+  padding: 0 0 7rem;
 }
 
 @media (min-width: 768px) {
@@ -323,17 +347,21 @@ body {
 .gallery__title:after {
   content: "";
   display: block;
+  position: absolute;
+  background-image: url("https://assets.zyrosite.com/adelinaposca/wow-AVLBBqgLerc4oP1J.svg");
+  background-repeat: no-repeat;
   width: 130px;
   height: 62px;
-  margin: 0 auto;
-  background-image: url("https://assets.zyrosite.com/adelinaposca/wow-AVLBBqgLerc4oP1J.svg");
+  margin: 2rem auto;
   background-size: 130px;
-  background-repeat: no-repeat;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
 }
 
 @media (min-width: 768px) {
   .gallery__title:after {
-    position: absolute;
     bottom: -19%;
     right: 7%;
     margin: initial;
@@ -341,13 +369,20 @@ body {
 }
 
 .gallery__grid {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[12];
-      grid-template-columns: repeat(12, 1fr);
-  -ms-grid-rows: .1fr 1fr 1fr .1fr 1fr 1fr .3fr 1fr 1.5fr 1fr .125fr .1fr;
-      grid-template-rows: .1fr 1fr 1fr .1fr 1fr 1fr .3fr 1fr 1.5fr 1fr .125fr .1fr;
-  margin: 6rem 0;
+  padding: 0 1rem;
+}
+
+@media (min-width: 1240px) {
+  .gallery__grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[12];
+        grid-template-columns: repeat(12, 1fr);
+    -ms-grid-rows: .1fr 1fr 1fr .1fr 1fr 1fr .3fr 1fr 1.5fr 1fr .125fr .1fr;
+        grid-template-rows: .1fr 1fr 1fr .1fr 1fr 1fr .3fr 1fr 1.5fr 1fr .125fr .1fr;
+    margin: 6rem 0;
+    padding: 0;
+  }
 }
 
 .gallery__image {
@@ -365,6 +400,13 @@ body {
 
 .gallery__image-container {
   position: relative;
+  margin: 0 0 5rem;
+}
+
+@media (min-width: 1240px) {
+  .gallery__image-container {
+    margin: 0;
+  }
 }
 
 .gallery__image-container:first-of-type {
@@ -376,18 +418,13 @@ body {
 }
 
 .gallery__image-container:first-of-type:after {
-  content: "";
-  display: block;
   width: 80px;
   height: 80px;
-  position: absolute;
   top: 5%;
   right: 0%;
   -webkit-transform: translate(50%, 0);
           transform: translate(50%, 0);
-  background-image: url("https://assets.zyrosite.com/adelinaposca/star-YNqoo45262c07xWO.svg");
   background-size: 80px;
-  background-repeat: no-repeat;
 }
 
 .gallery__image-container:nth-of-type(2) {
@@ -407,18 +444,13 @@ body {
 }
 
 .gallery__image-container:nth-of-type(3):after {
-  content: "";
-  display: block;
   width: 80px;
   height: 80px;
-  position: absolute;
   top: 0;
   right: 12%;
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
-  background-image: url("https://assets.zyrosite.com/adelinaposca/star-YNqoo45262c07xWO.svg");
   background-size: 80px;
-  background-repeat: no-repeat;
 }
 
 .gallery__image-container:nth-of-type(4) {
@@ -430,18 +462,13 @@ body {
 }
 
 .gallery__image-container:nth-of-type(4):after {
-  content: "";
-  display: block;
   width: 80px;
   height: 80px;
-  position: absolute;
   top: 5%;
   right: 0%;
   -webkit-transform: translate(50%, 0);
           transform: translate(50%, 0);
-  background-image: url("https://assets.zyrosite.com/adelinaposca/star-YNqoo45262c07xWO.svg");
   background-size: 80px;
-  background-repeat: no-repeat;
 }
 
 .gallery__image-container:nth-of-type(5) {
@@ -453,23 +480,20 @@ body {
 }
 
 .gallery__image-container:nth-of-type(5):after {
-  content: "";
-  display: block;
   width: 35px;
   height: 35px;
-  position: absolute;
   top: 0%;
   right: 4%;
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
-  background-image: url("https://assets.zyrosite.com/adelinaposca/star-YNqoo45262c07xWO.svg");
   background-size: 35px;
-  background-repeat: no-repeat;
 }
 
-.gallery__image-container:nth-of-type(5) .gallery__image-title,
-.gallery__image-container:nth-of-type(5) .gallery__image-subtitle {
-  padding: 0 0 0 8rem;
+@media (min-width: 1240px) {
+  .gallery__image-container:nth-of-type(5) .gallery__image-title,
+  .gallery__image-container:nth-of-type(5) .gallery__image-subtitle {
+    padding: 0 0 0 8rem;
+  }
 }
 
 .gallery__image-container:nth-of-type(6) {
@@ -481,33 +505,34 @@ body {
 }
 
 .gallery__image-container:nth-of-type(6):before {
-  content: "";
-  display: block;
   width: 80px;
   height: 80px;
-  position: absolute;
   top: 0%;
   right: 8.7%;
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
-  background-image: url("https://assets.zyrosite.com/adelinaposca/star-YNqoo45262c07xWO.svg");
   background-size: 80px;
-  background-repeat: no-repeat;
 }
 
 .gallery__image-container:nth-of-type(6):after {
   content: "";
-  display: block;
+  display: none;
+  position: absolute;
+  background-image: url("https://assets.zyrosite.com/adelinaposca/tellme-A85ljkXpjZcWB9LJ.svg");
+  background-repeat: no-repeat;
   width: 180px;
   height: 105px;
-  position: absolute;
   bottom: 31%;
   right: 0%;
   -webkit-transform: translate(50%, 0);
           transform: translate(50%, 0);
-  background-image: url("https://assets.zyrosite.com/adelinaposca/tellme-A85ljkXpjZcWB9LJ.svg");
   background-size: 180px;
-  background-repeat: no-repeat;
+}
+
+@media (min-width: 1240px) {
+  .gallery__image-container:nth-of-type(6):after {
+    display: block;
+  }
 }
 
 .gallery__image-container:nth-of-type(7) {
@@ -522,13 +547,54 @@ body {
   color: #fff;
   font-family: "MuseoModerno", display;
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 1.5;
   margin: .725rem 0 0;
 }
 
+@media (min-width: 768px) {
+  .gallery__image-title {
+    font-size: 2rem;
+  }
+}
+
 .gallery__image-subtitle {
   color: #fff;
+  font-family: "Work Sans", sans-serif;
+}
+
+.about {
+  width: 100%;
+  background-color: #9a64ce;
+  margin: 2rem 0;
+  padding: 6rem 0;
+}
+
+.about-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.about-me {
+  -ms-flex-preferred-size: 28%;
+      flex-basis: 28%;
+}
+
+.about-me__title {
+  color: #fff;
+  font-size: 4rem;
+  font-family: "MuseoModerno", display;
+  text-transform: uppercase;
+}
+
+.about-me__desc {
   font-family: "Work Sans", sans-serif;
 }
 /*# sourceMappingURL=main.css.map */
