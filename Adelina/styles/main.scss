@@ -484,20 +484,85 @@ body {
         width: 100%;
         max-width: $desktop;
         margin: 0 auto;
+        padding: 0 1rem;
         justify-content: space-between;
+        flex-direction: column;
+        gap: 5rem;
+
+        &__inner {
+            width: 100%;
+            display: flex;
+            gap: 1rem;
+            padding: initial;
+
+            @include tablet() {
+                gap: 5rem;
+            }
+
+            @include desktop() {
+                width: 45%;
+                justify-content: space-between;
+            }
+        }
+
+        @include desktop() {
+            flex-direction: row;
+            gap: 0;
+        }
     }
 
     &-me {
-        flex-basis: 28%;
+        width: 100%;
+
+        @include desktop() {
+            width: 28%;
+        }
 
         &__title {
             color: $c-primary;
-            font-size: 4rem;
+            font-size: 4.5rem;
+            font-family: $ff-primary;
+            text-transform: uppercase;
+            line-height: 1.225;
+            margin: 0 0 2rem;
+        }
+
+        &__desc {
+            font-family: $ff-secondary;
+        }
+    }
+
+    &-education {
+        &__title {
+            color: $c-secondary;
+            font-size: 2rem;
             font-family: $ff-primary;
             text-transform: uppercase;
         }
 
-        &__desc {
+        &__text {
+            font-family: $ff-secondary;
+            margin: 1rem 0;
+        }
+
+        &__image {
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &-experience {
+        flex-basis: 20%;
+
+        &__title {
+            color: $c-secondary;
+            font-size: 2rem;
+            font-family: $ff-primary;
+            text-transform: uppercase;
+            margin: 0 0 1rem;
+        }
+
+        &__text {
             font-family: $ff-secondary;
         }
     }
