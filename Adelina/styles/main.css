@@ -679,4 +679,115 @@ body {
 .about-experience__text {
   font-family: "Work Sans", sans-serif;
 }
+
+.skills {
+  width: 100%;
+  max-width: 924px;
+  margin: 5rem auto;
+}
+
+.skills__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.skills__title {
+  color: #fff;
+  font-size: 2rem;
+  font-family: "MuseoModerno", display;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .skills__title {
+    font-size: 3.5rem;
+  }
+}
+
+.skills__title--item {
+  font-size: 0.875rem;
+  margin: 1rem 0 0;
+}
+
+@media (min-width: 768px) {
+  .skills__title--item {
+    font-size: 1rem;
+  }
+}
+
+.skills__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  margin: 3rem 0 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .skills__list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 0;
+    margin: 5rem 0 0;
+  }
+}
+
+.skills__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(100% / 4);
+          flex: 0 0 calc(100% / 4);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.skills__image {
+  width: 70px;
+}
+
+@media (min-width: 768px) {
+  .skills__image {
+    width: 90px;
+  }
+}
+
+.skills__image--star {
+  width: 50px;
+}
+
+@media (min-width: 768px) {
+  .skills__image--star {
+    width: 90px;
+  }
+}
+
+.skills__icons {
+  color: #fff;
+  font-size: 1.5rem;
+}
 /*# sourceMappingURL=main.css.map */

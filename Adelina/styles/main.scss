@@ -567,3 +567,79 @@ body {
         }
     }
 }
+
+.skills {
+    width: 100%;
+    max-width: 924px;
+    margin: 5rem auto;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title {
+        color: $c-primary;
+        font-size: 2rem;
+        font-family: $ff-primary;
+        text-transform: uppercase;
+        text-align: center;
+
+        @include tablet() {
+            font-size: 3.5rem;
+        }
+
+        &--item {
+            font-size: 0.875rem;
+            margin: 1rem 0 0;
+
+            @include tablet() {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+        margin: 3rem 0 0;
+        flex-direction: column;
+        gap: 2rem;
+
+        @include tablet() {
+            flex-direction: row;
+            gap: 0;
+            margin: 5rem 0 0;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex: 0 0 calc(100% / 4);
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &__image {
+        width: 70px;
+
+        @include tablet() {
+            width: 90px;
+        }
+
+        &--star {
+            width: 50px;
+
+            @include tablet() {
+                width: 90px;
+            }
+        }
+    }
+
+    &__icons {
+        color: $c-primary;
+        font-size: 1.5rem;
+    }
+}
