@@ -24,7 +24,7 @@
 }
 
 body {
-  background-color: #141518;
+  background: #141518;
 }
 
 .highlight {
@@ -39,7 +39,7 @@ body {
   width: 100%;
   position: fixed;
   top: 0;
-  background-color: #141518;
+  background: #141518;
   z-index: 10;
 }
 
@@ -228,7 +228,7 @@ body {
 }
 
 .social {
-  background-color: #fff;
+  background: #fff;
   margin: 10rem 0 5rem 0;
 }
 
@@ -565,7 +565,7 @@ body {
 
 .about {
   width: 100%;
-  background-color: #9a64ce;
+  background: #9a64ce;
   margin: 2rem 0;
   padding: 6rem 0;
 }
@@ -789,5 +789,94 @@ body {
 .skills__icons {
   color: #fff;
   font-size: 1.5rem;
+}
+
+.contact {
+  background: #fff;
+}
+
+.contact__inner-container {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 40%;
+          flex: 0 0 40%;
+}
+
+.contact__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 10rem 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contact__title {
+  display: inline-block;
+  color: #141518;
+  font-size: 5rem;
+  font-family: "MuseoModerno", display;
+  text-transform: uppercase;
+  line-height: 1.2;
+  position: relative;
+}
+
+.contact__title:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-image: url("https://assets.zyrosite.com/adelinaposca/plssayyoudo-AR0BBRzoBNIe0qw6.svg");
+  background-repeat: no-repeat;
+  width: 180px;
+  height: 105px;
+  top: 5%;
+  right: -3%;
+  background-size: 180px;
+}
+
+.contact__text {
+  display: block;
+  width: 68%;
+  font-family: "Work Sans", sans-serif;
+  margin: 1rem 0 0;
+  line-height: 1.4;
+}
+
+.contact__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 40%;
+          flex: 0 0 40%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+}
+
+.contact__input-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contact__label {
+  font-family: "Work Sans", sans-serif;
+}
+
+.contact__input {
+  font-family: "Work Sans", sans-serif;
+  margin: .3rem 0 0;
+  padding: 1rem;
+  border: .0875rem solid #ddd;
 }
 /*# sourceMappingURL=main.css.map */

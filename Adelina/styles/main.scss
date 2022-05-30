@@ -46,7 +46,7 @@ $tablet: 768px;
 }
 
 body {
-    background-color: $c-secondary;
+    background: $c-secondary;
 }
 
 .highlight {
@@ -61,7 +61,7 @@ body {
     width: 100%;
     position: fixed;
     top: 0;
-    background-color: $c-secondary;
+    background: $c-secondary;
     z-index: 10;
 }
 
@@ -212,7 +212,7 @@ body {
 }
 
 .social {
-    background-color: $c-primary;
+    background: $c-primary;
     margin: 10rem 0 5rem 0;
 
     &__container {
@@ -475,7 +475,7 @@ body {
 
 .about {
     width: 100%;
-    background-color: $c-accent;
+    background: $c-accent;
     margin: 2rem 0;
     padding: 6rem 0;
 
@@ -641,5 +641,76 @@ body {
     &__icons {
         color: $c-primary;
         font-size: 1.5rem;
+    }
+}
+
+.contact {
+    background: #fff;
+
+    &__inner-container {
+        flex: 0 0 40%;
+    }
+
+    &__container {
+        display: flex;
+        width: 100%;
+        max-width: $desktop;
+        margin: 0 auto;
+        padding: 10rem 0;
+        justify-content: space-between;
+    }
+
+    &__title {
+        display: inline-block;
+        color: $c-secondary;
+        font-size: 5rem;
+        font-family: $ff-primary;
+        text-transform: uppercase;
+        line-height: 1.2;
+        position: relative;
+
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            background-image: url("https://assets.zyrosite.com/adelinaposca/plssayyoudo-AR0BBRzoBNIe0qw6.svg");
+            background-repeat: no-repeat;
+            width: 180px;
+            height: 105px;
+            top: 5%;
+            right: -3%;
+            background-size: 180px;
+        }
+    }
+
+    &__text {
+        display: block;
+        width: 68%;
+        font-family: $ff-secondary;
+        margin: 1rem 0 0;
+        line-height: 1.4;
+    }
+
+    &__form {
+        display: flex;
+        flex: 0 0 40%;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__input-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__label {
+        font-family: $ff-secondary;
+    }
+
+    &__input {
+        font-family: $ff-secondary;
+        margin: .3rem 0 0;
+        padding: 1rem;
+        border: .0875rem solid #ddd;
     }
 }
