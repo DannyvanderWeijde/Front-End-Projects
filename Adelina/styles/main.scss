@@ -307,9 +307,10 @@ body {
             left: 50%;
             transform: translate(-50%, 0);
 
-            @include tablet() {
-                bottom: -19%;
-                right: 7%;
+            @include desktop() {
+                top: 34%;
+                right: 3%;
+                left: auto;
                 margin: initial;
             }
         }
@@ -476,8 +477,7 @@ body {
 .about {
     width: 100%;
     background: $c-accent;
-    margin: 2rem 0;
-    padding: 6rem 0;
+    padding: 8rem 0;
 
     &-container {
         display: flex;
@@ -571,7 +571,7 @@ body {
 .skills {
     width: 100%;
     max-width: 924px;
-    margin: 5rem auto;
+    margin: 8rem auto;
 
     &__header {
         display: flex;
@@ -656,8 +656,15 @@ body {
         width: 100%;
         max-width: $desktop;
         margin: 0 auto;
-        padding: 10rem 0;
+        padding: 10rem 1rem;
         justify-content: space-between;
+        flex-direction: column;
+        gap: 5rem;
+
+        @include desktop() {
+            flex-direction: row;
+            gap: 0;
+        }
     }
 
     &__title {
@@ -712,5 +719,24 @@ body {
         margin: .3rem 0 0;
         padding: 1rem;
         border: .0875rem solid #ddd;
+    }
+
+    &__button {
+        display: inline-block;
+        outline: none;
+        border: none;
+        color: $c-primary;
+        background: $c-accent;
+        align-self: flex-start;
+        padding: 1rem 3rem;
+        border-radius: 3rem;
+        font-weight: bold;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: .5s;
+
+        &:hover {
+            background: darken($c-accent, 10%);
+        }
     }
 }

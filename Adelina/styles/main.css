@@ -360,10 +360,11 @@ body {
           transform: translate(-50%, 0);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1240px) {
   .gallery__title:after {
-    bottom: -19%;
-    right: 7%;
+    top: 34%;
+    right: 3%;
+    left: auto;
     margin: initial;
   }
 }
@@ -566,8 +567,7 @@ body {
 .about {
   width: 100%;
   background: #9a64ce;
-  margin: 2rem 0;
-  padding: 6rem 0;
+  padding: 8rem 0;
 }
 
 .about-container {
@@ -683,7 +683,7 @@ body {
 .skills {
   width: 100%;
   max-width: 924px;
-  margin: 5rem auto;
+  margin: 8rem auto;
 }
 
 .skills__header {
@@ -808,10 +808,25 @@ body {
   width: 100%;
   max-width: 1240px;
   margin: 0 auto;
-  padding: 10rem 0;
+  padding: 10rem 1rem;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5rem;
+}
+
+@media (min-width: 1240px) {
+  .contact__container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 0;
+  }
 }
 
 .contact__title {
@@ -878,5 +893,26 @@ body {
   margin: .3rem 0 0;
   padding: 1rem;
   border: .0875rem solid #ddd;
+}
+
+.contact__button {
+  display: inline-block;
+  outline: none;
+  border: none;
+  color: #fff;
+  background: #9a64ce;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  padding: 1rem 3rem;
+  border-radius: 3rem;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.contact__button:hover {
+  background: #813dc2;
 }
 /*# sourceMappingURL=main.css.map */
